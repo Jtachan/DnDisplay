@@ -76,12 +76,33 @@ function renderContent(content, item) {
         labelEl.className = "label";
         labelEl.textContent = label;
 
-        const valueEl = document.createElement("span");
-        valueEl.className = "value";
-        valueEl.textContent = item[key];
+        if (key === "PG") {
+            const valueWrap = document.createElement("span");
+            valueWrap.className = "value dnd-pg-value";
 
-        stat.appendChild(labelEl);
-        stat.appendChild(valueEl);
+            const current = document.createElement("input");
+            current.type = "number";
+            current.className = "dnd-pg-input";
+            current.value = item.PG;
+            current.min = "0";
+            current.max = String(item.PG);
+
+            const maxText = document.createElement("span");
+            maxText.textContent = `/${item.PG}`;
+
+            valueWrap.appendChild(current);
+            valueWrap.appendChild(maxText);
+
+            stat.appendChild(labelEl);
+            stat.appendChild(valueWrap);
+        } else {
+            const valueEl = document.createElement("span");
+            valueEl.className = "value";
+            valueEl.textContent = item[key];
+
+            stat.appendChild(labelEl);
+            stat.appendChild(valueEl);
+        }
         quickRow.appendChild(stat);
     });
     content.appendChild(quickRow);

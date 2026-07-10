@@ -147,6 +147,30 @@ body {
   color: var(--dnd-text);
 }
 
+.dnd-pg-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+}
+
+.dnd-pg-input {
+  border: none;
+  background: transparent;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--dnd-text);
+  text-align: right;
+  -moz-appearance: textfield;
+}
+
+.dnd-pg-input::-webkit-inner-spin-button,
+.dnd-pg-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* Ability score table */
 
 .dnd-stat-table {

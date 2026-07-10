@@ -1,5 +1,24 @@
 {
-  "Bandit": {
+  "Banana Knight (VD 2 + 1/2)": {
+    "FUE": "16 (+3)",
+    "INT": "11 (+0)",
+    "DES": "11 (+0)",
+    "SAB": "11 (+0)",
+    "CON": "14 (+2)",
+    "CAR": "15 (+2)",
+    "CA": 18,
+    "PG": 52,
+    "Vel": "12 m",
+    "Iniciativa": "+3",
+    "inventory/actions": [
+      "Valiente idiota: Inmune al estado asustado.",
+      "Mandoble: At +5, daño 2d6+3 cortante.",
+      "Banana slip: Su cuerpo y piel de banana le ayudan a esquivar ataques, teniendo un 18 de CA natural.",
+      "Es solo un rasguño: Cada vez que un ataque cortante acierte, el caballero perderá un miembro y recibirá un penalizador de -2 a toda acción y de -1 a la CA. Este rasgo hace inmortal al caballero.",
+      "Experto 1vs1: Cada jugador que le ataque (impacte o no) le hace perder 1 de CA durante ese turno."
+    ]
+  },
+  "Bandido": {
     "FUE": "11 (+0)",
     "INT": "10 (+0)",
     "DES": "12 (+1)",
@@ -9,27 +28,44 @@
     "CA": 12,
     "PG": 11,
     "Vel": "9 m",
-    "Turn": "+1",
+    "Iniciativa": "+1",
     "inventory/actions": [
-       "leather armor",
-       "Light crossbow: At +3, Dmg 1d8+1 perf."
+      "Armadura de cuero.",
+      "Ballesta ligera: At +3, daño 1d8+1 perforante.",
+      "Cimitarra: At +3, daño 1d6+1 cortante."
     ]
   },
-  "Goblin": {
-    "FUE": "8 (-1)",
-    "INT": "10 (+0)",
-    "DES": "14 (+2)",
-    "SAB": "8 (-1)",
-    "CON": "10 (+0)",
-    "CAR": "8 (-1)",
+  "Capitán Bandido": {
+    "FUE": "15 (+2)",
+    "INT": "14 (+2)",
+    "DES": "16 (+3)",
+    "SAB": "11 (+0)",
+    "CON": "14 (+2)",
+    "CAR": "14 (+2)",
     "CA": 15,
-    "PG": 7,
+    "PG": 52,
     "Vel": "9 m",
-    "Turn": "+2",
+    "Iniciativa": "+3",
     "inventory/actions": [
-      "leather armor, shield",
-      "Scimitar: At +4, Dmg 1d6+2 cort.",
-      "Short bow: At +4, Dmg 1d6+2 perf."
+      "Armadura de cuero tachonada",
+      "Pistola: At +5, daño 1d8+3 perforante.",
+      "Cimitarra: At +5, daño 1d6+3 cortante.",
+      "Ataque múltiple: Puede realizar dos ataques consecutivos"
+    ]
+  },
+  "Lobo (VD 1/4)": {
+    "FUE": "14 (+2)",
+    "INT": "3 (-4)",
+    "DES": "15 (+2)",
+    "SAB": "12 (+1)",
+    "CON": "12 (+1)",
+    "CAR": "6 (-2)",
+    "CA": 12,
+    "PG": 11,
+    "Vel": "12 m",
+    "Iniciativa": "+3",
+    "inventory/actions": [
+      "Mordisco: At +4, daño 2d4+2 perforante."
     ]
   }
 }

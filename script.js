@@ -69,6 +69,7 @@
       { key: "CA", label: "CA" },
       { key: "PG", label: "PG" },
       { key: "Vel", label: "Vel" },
+      { key: "Iniciativa", label: "Iniciativa" },
     ].forEach(({ key, label }) => {
       const stat = document.createElement("div");
       stat.className = "dnd-quick-stat";
@@ -109,12 +110,12 @@
     // Inventory / actions
     const invTitle = document.createElement("h4");
     invTitle.className = "dnd-inventory-title";
-    invTitle.textContent = "Inventory / Actions";
+    invTitle.textContent = "Inventory / Equipment";
     content.appendChild(invTitle);
 
     const ul = document.createElement("ul");
     ul.className = "dnd-inventory-list";
-    (item["inventory/actions"] || []).forEach((entry) => {
+    (item["inventory/equip"] || []).forEach((entry) => {
       const li = document.createElement("li");
       li.textContent = entry;
       ul.appendChild(li);

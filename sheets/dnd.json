@@ -1,0 +1,35 @@
+{
+  "Bandit": {
+    "FUE": "11 (+0)",
+    "INT": "10 (+0)",
+    "DES": "12 (+1)",
+    "SAB": "10 (+0)",
+    "CON": "12 (+0)",
+    "CAR": "10 (+0)",
+    "CA": 12,
+    "PG": 11,
+    "Vel": "9 m",
+    "Turn": "+1",
+    "inventory/actions": [
+       "leather armor",
+       "Light crossbow: At +3, Dmg 1d8+1 perf."
+    ]
+  },
+  "Goblin": {
+    "FUE": "8 (-1)",
+    "INT": "10 (+0)",
+    "DES": "14 (+2)",
+    "SAB": "8 (-1)",
+    "CON": "10 (+0)",
+    "CAR": "8 (-1)",
+    "CA": 15,
+    "PG": 7,
+    "Vel": "9 m",
+    "Turn": "+2",
+    "inventory/actions": [
+      "leather armor, shield",
+      "Scimitar: At +4, Dmg 1d6+2 cort.",
+      "Short bow: At +4, Dmg 1d6+2 perf."
+    ]
+  }
+}

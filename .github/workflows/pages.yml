@@ -1,0 +1,38 @@
+name: Continuous deployment onto GH-Pages
+on:
+  push:
+    branches:
+      - "main"
+  schedule:
+    - cron: "0 5 1 * *"  # 05:00 UTC, 1st day of every month
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./
+          retention-days: 32
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

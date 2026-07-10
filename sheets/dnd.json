@@ -10,9 +10,12 @@
     "PG": 52,
     "Vel": "12 m",
     "Iniciativa": "+3",
-    "inventory/actions": [
+    "inventory": [],
+    "actions": [
+      "Mandoble: At +5, daño 2d6+3 cortante."
+    ],
+    "feats": [
       "Valiente idiota: Inmune al estado asustado.",
-      "Mandoble: At +5, daño 2d6+3 cortante.",
       "Banana slip: Su cuerpo y piel de banana le ayudan a esquivar ataques, teniendo un 18 de CA natural.",
       "Es solo un rasguño: Cada vez que un ataque cortante acierte, el caballero perderá un miembro y recibirá un penalizador de -2 a toda acción y de -1 a la CA. Este rasgo hace inmortal al caballero.",
       "Experto 1vs1: Cada jugador que le ataque (impacte o no) le hace perder 1 de CA durante ese turno."
@@ -29,11 +32,14 @@
     "PG": 11,
     "Vel": "9 m",
     "Iniciativa": "+1",
-    "inventory/actions": [
-      "Armadura de cuero.",
+    "inventory": [
+      "Armadura de cuero."
+    ],
+    "actions": [
       "Ballesta ligera: At +3, daño 1d8+1 perforante.",
       "Cimitarra: At +3, daño 1d6+1 cortante."
-    ]
+    ],
+    "feats": []
   },
   "Capitán Bandido": {
     "FUE": "15 (+2)",
@@ -46,10 +52,14 @@
     "PG": 52,
     "Vel": "9 m",
     "Iniciativa": "+3",
-    "inventory/actions": [
-      "Armadura de cuero tachonada",
+    "inventory": [
+      "Armadura de cuero tachonada."
+    ],
+    "actions": [
       "Pistola: At +5, daño 1d8+3 perforante.",
-      "Cimitarra: At +5, daño 1d6+3 cortante.",
+      "Cimitarra: At +5, daño 1d6+3 cortante."
+    ],
+    "feats": [
       "Ataque múltiple: Puede realizar dos ataques consecutivos"
     ]
   },
@@ -64,8 +74,10 @@
     "PG": 11,
     "Vel": "12 m",
     "Iniciativa": "+3",
-    "inventory/actions": [
+    "actions": [
       "Mordisco: At +4, daño 2d4+2 perforante."
-    ]
+    ],
+    "inventory": [],
+    "feats": []
   }
 }

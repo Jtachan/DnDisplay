@@ -1,22 +1,21 @@
-(function () {
-  const DB_URL = "sheets/dnd.json";
-  const STAT_KEYS = ["FUE", "INT", "DES", "SAB", "CON", "CAR"];
+const DB_URL = "sheets/dnd.json";
+const STAT_KEYS = ["FUE", "INT", "DES", "SAB", "CON", "CAR"];
 
-  const container = document.getElementById("sheets-container");
-  let DB = {};
+const container = document.getElementById("sheets-container");
+let DB = {};
 
-  function createAddButton() {
+function createAddButton() {
     const addBtn = document.createElement("button");
     addBtn.textContent = "Add new sheet";
     addBtn.className = "dnd-btn dnd-add-btn";
     addBtn.addEventListener("click", () => {
-      const sheet = createSheet();
-      container.insertBefore(sheet, addBtn);
+        const sheet = createSheet();
+        container.insertBefore(sheet, addBtn);
     });
     return addBtn;
-  }
+}
 
-  function createSheet() {
+function createSheet() {
     const wrapper = document.createElement("div");
     wrapper.className = "dnd-sheet";
 
@@ -29,13 +28,12 @@
     select.appendChild(placeholder);
 
     Object.keys(DB)
-      .sort((a, b) => a.localeCompare(b))
-      .forEach((name) => {
-        const opt = document.createElement("option");
-        opt.value = name;
-        opt.textContent = name;
-        select.appendChild(opt);
-      });
+        .forEach((name) => {
+            const opt = document.createElement("option");
+            opt.value = name;
+            opt.textContent = name;
+            select.appendChild(opt);
+        });
 
     const content = document.createElement("div");
     content.className = "dnd-sheet-content";
@@ -56,9 +54,9 @@
     wrapper.appendChild(footer);
 
     return wrapper;
-  }
+}
 
-  function renderContent(content, item) {
+function renderContent(content, item) {
     content.innerHTML = "";
     if (!item) return;
 
@@ -66,25 +64,25 @@
     const quickRow = document.createElement("div");
     quickRow.className = "dnd-quick-row";
     [
-      { key: "CA", label: "CA" },
-      { key: "PG", label: "PG" },
-      { key: "Vel", label: "Vel" },
-      { key: "Iniciativa", label: "Iniciativa" },
-    ].forEach(({ key, label }) => {
-      const stat = document.createElement("div");
-      stat.className = "dnd-quick-stat";
+        {key: "CA", label: "CA"},
+        {key: "PG", label: "PG"},
+        {key: "Vel", label: "Vel"},
+        {key: "Iniciativa", label: "Iniciativa"},
+    ].forEach(({key, label}) => {
+        const stat = document.createElement("div");
+        stat.className = "dnd-quick-stat";
 
-      const labelEl = document.createElement("span");
-      labelEl.className = "label";
-      labelEl.textContent = label;
+        const labelEl = document.createElement("span");
+        labelEl.className = "label";
+        labelEl.textContent = label;
 
-      const valueEl = document.createElement("span");
-      valueEl.className = "value";
-      valueEl.textContent = item[key];
+        const valueEl = document.createElement("span");
+        valueEl.className = "value";
+        valueEl.textContent = item[key];
 
-      stat.appendChild(labelEl);
-      stat.appendChild(valueEl);
-      quickRow.appendChild(stat);
+        stat.appendChild(labelEl);
+        stat.appendChild(valueEl);
+        quickRow.appendChild(stat);
     });
     content.appendChild(quickRow);
 
@@ -95,45 +93,53 @@
     const headRow = document.createElement("tr");
     const bodyRow = document.createElement("tr");
     STAT_KEYS.forEach((key) => {
-      const th = document.createElement("th");
-      th.textContent = key;
-      headRow.appendChild(th);
+        const th = document.createElement("th");
+        th.textContent = key;
+        headRow.appendChild(th);
 
-      const td = document.createElement("td");
-      td.textContent = item[key];
-      bodyRow.appendChild(td);
+        const td = document.createElement("td");
+        td.textContent = item[key];
+        bodyRow.appendChild(td);
     });
     table.appendChild(headRow);
     table.appendChild(bodyRow);
     content.appendChild(table);
 
-    // Inventory / actions
-    const invTitle = document.createElement("h4");
-    invTitle.className = "dnd-inventory-title";
-    invTitle.textContent = "Inventory / Equipment";
-    content.appendChild(invTitle);
+    // Sections
+    for (const [key, title] of [
+        ["inventory", "Inventory / Equipment"],
+        ["actions", "Acciones"],
+        ["feats", "Rasgos"],
+    ]) {
+        let data = item[key] || [];
+        if (data.length > 0) {
+            const invTitle = document.createElement("h4");
+            invTitle.className = "dnd-section-title";
+            invTitle.textContent = title;
+            content.appendChild(invTitle);
 
-    const ul = document.createElement("ul");
-    ul.className = "dnd-inventory-list";
-    (item["inventory/equip"] || []).forEach((entry) => {
-      const li = document.createElement("li");
-      li.textContent = entry;
-      ul.appendChild(li);
-    });
-    content.appendChild(ul);
-  }
+            const ul = document.createElement("ul");
+            ul.className = "dnd-section-list";
+            data.forEach((entry) => {
+                const li = document.createElement("li");
+                li.textContent = entry;
+                ul.appendChild(li);
+            });
+            content.appendChild(ul);
+        }
+    }
+}
 
-  fetch(DB_URL)
+fetch(DB_URL)
     .then((res) => {
-      if (!res.ok) throw new Error(`Failed to load ${DB_URL}: ${res.status}`);
-      return res.json();
+        if (!res.ok) throw new Error(`Failed to load ${DB_URL}: ${res.status}`);
+        return res.json();
     })
     .then((data) => {
-      DB = data;
-      container.appendChild(createAddButton());
+        DB = data;
+        container.appendChild(createAddButton());
     })
     .catch((err) => {
-      console.error(err);
-      container.textContent = "Could not load DnD database.";
+        console.error(err);
+        container.textContent = "Could not load DnD database.";
     });
-})();

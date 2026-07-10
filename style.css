@@ -184,7 +184,7 @@ body {
 
 /* Inventory / actions */
 
-.dnd-inventory-title {
+.dnd-section-title {
   font-family: 'Roboto Slab', serif;
   color: var(--dnd-red-dark);
   font-size: 1rem;
@@ -195,7 +195,7 @@ body {
   margin: 0 0 0.5rem;
 }
 
-.dnd-inventory-list {
+.dnd-section-list {
   margin: 0 0 1.2rem;
   padding-left: 1.2rem;
   font-size: 0.92rem;
@@ -203,7 +203,7 @@ body {
   color: var(--dnd-text);
 }
 
-.dnd-inventory-list li {
+.dnd-section-list li {
   margin-bottom: 0.3rem;
 }
 

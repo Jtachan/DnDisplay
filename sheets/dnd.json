@@ -63,6 +63,51 @@
       "Ataque múltiple: Puede realizar dos ataques consecutivos"
     ]
   },
+  "Espada voladora (VD 1/4)": {
+    "FUE": "12 (+1)",
+    "INT": "1 (-5)",
+    "DES": "15 (+2)",
+    "SAB": "5 (-3)",
+    "CON": "11 (+0)",
+    "CAR": "1 (-5)",
+    "CA": 17,
+    "PG": 17,
+    "Vel": "15 m",
+    "Iniciativa": "+2",
+    "inventory": [],
+    "actions": [
+      "Espada larga: At. +3, daño 1d8+1 cortante"
+    ],
+    "feats": [
+      "Inmunidad (daño): Veneno, psíquico",
+      "Inmunidad (estado): Cegado, hechizado, ensordecido, asustado, paralizado, petrificado, envenenado",
+      "Susceptibilidad antimagia: Si entra en el área de Campo Antimagia, la espada queda incapacitada. Contra Disipar Magia debe superar una salvación de CON contra la CD del lanzador de conjuro, quedando inconsciente 1 minuto si falla.",
+      "Apariencia falsa: Mientras no se mueva ni vuele, es indistinguible de una espada normal."
+    ]
+  },
+  "Goblin (VD 1/4)": {
+    "FUE": "8 (-1)",
+    "INT": "10 (+0)",
+    "DES": "14 (+2)",
+    "SAB": "8 (-1)",
+    "CON": "10 (+0)",
+    "CAR": "8 (-1)",
+    "CA": 15,
+    "PG": 7,
+    "Vel": "9 m",
+    "Iniciativa": "+2",
+    "inventory": [
+      "Armadura de cuero",
+      "Escudo"
+    ],
+    "actions": [
+      "Cimitarra: At +4, daño 1d6+2 cortante",
+      "Arco corto: At +4, alcance 80/320 pies, daño 1d6+2 cortante"
+    ],
+    "feats": [
+      "Huída veloz: El trasgo puede realizar una acción de retirarse o esconderse como acción adicional en cada turno."
+    ]
+  },
   "Lobo (VD 1/4)": {
     "FUE": "14 (+2)",
     "INT": "3 (-4)",
@@ -79,5 +124,26 @@
     ],
     "inventory": [],
     "feats": []
+  },
+  "Z, la IA (VD 3)": {
+    "FUE": "10 (+0)",
+    "INT": "16 (+3)",
+    "DES": "14 (+2)",
+    "SAB": "12 (+1)",
+    "CON": "16 (+3)",
+    "CAR": "18 (+4)",
+    "CA": 15,
+    "PG": 34,
+    "Vel": "9 m",
+    "Iniciativa": "+3",
+    "inventory": [],
+    "actions": [
+      "Trucos: Descarga sobrenatural, impacto certero, rociada venenosa, llama sagrada, descarga de fuego, salpicadura ácida",
+      "Conjuros Nv1 (3 espacios): Hechizar persona, represión infernal",
+      "Conjuros Nv2 (4 espacios): Hacer añicos, inmovilizar persona"
+    ],
+    "feats": [
+      "Ataque múltiple: Puede realizar dos ataques consecutivos"
+    ]
   }
 }
